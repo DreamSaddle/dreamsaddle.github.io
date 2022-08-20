@@ -1,0 +1,13 @@
+entries:
+  - title: info
+    entries:
+      - title: programmer. java
+      - title: "<a href='https://github.com/DreamSaddle' target='_blank'>GitHub</a>"
+      - title: "<a href='mailto:dreamsaddle496@gmail.com'>email</a>"
+
+  - title: all posts
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
