@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: "en" }}">
-  {%- include head.html -%}
-  <body a="{{ site.theme_config.appearance | default: "auto" }}">
-    <main class="page-content" aria-label="Content">
-      <div class="w">
-        {{ content }}
-      </div>
-    </main>
+<html lang="{{ page.lang | default: " en" }}">
+{%- include head.html -%}
 
-    {%-if site.goat_counter and jekyll.environment == "production"-%}
-      {%-include goat_counter.html-%}
-    {%-endif-%}
+<head>
+  <!-- 
+    代码高亮主题
+    https://github.com/highlightjs/highlight.js/blob/main/src/styles/a11y-dark.css
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/a11y-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
 
-    {% if page.custom_js %}
-      {% for js_file in page.custom_js %}
-        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
-      {% endfor %}
-    {% endif %}
-  </body>
+<body a="{{ site.theme_config.appearance | default: " auto" }}">
+  <main class="page-content" aria-label="Content">
+    <div class="w">
+      {{ content }}
+    </div>
+  </main>
+
+  {%-if site.goat_counter and jekyll.environment == "production"-%}
+  {%-include goat_counter.html-%}
+  {%-endif-%}
+
+  {% if page.custom_js %}
+  {% for js_file in page.custom_js %}
+  <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+  {% endfor %}
+  {% endif %}
+</body>
+
 </html>

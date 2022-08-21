@@ -1,27 +1,40 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   filter: invert(1);
+
   img {
     filter: invert(1);
 
-    &.ioda { filter: invert(0); }
+    &.ioda {
+      filter: invert(0);
+    }
   }
 }
 
-body[a="dark"] { @include dark-appearance; }
+body[a="dark"] {
+  @include dark-appearance;
+}
 
 
 @media (prefers-color-scheme: dark) {
-  body[a="auto"] { @include dark-appearance; }
+  body[a="auto"] {
+    @include dark-appearance;
+  }
 }
+
 // -------------------------------------------- //
 
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: white; }
+html,
+body {
+  background: white;
+}
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 body {
   color: black;
@@ -33,20 +46,37 @@ body {
   overflow-wrap: break-word;
 }
 
-.post-meta { text-align: right; }
+.post-meta {
+  text-align: right;
+}
 
-h2, h3, h4, h5, h6 { margin-top: 3rem; }
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: .5rem !important;
+  margin-bottom: .2rem;
+}
 
-hr { margin: 2rem 0; }
+hr {
+  margin: 2rem 0;
+}
 
-p { margin: 1rem 0; }
+p {
+  margin: .5rem 0;
+}
 
-li { margin: 0.4rem 0; }
+li {
+  margin: 0.3rem 0;
+}
 
-*:target { background: yellow; }
+*:target {
+  background: yellow;
+}
 
 .w {
-  max-width: 640px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
@@ -55,16 +85,41 @@ hr {
   text-align: center;
   border: 0;
 
-  &:before { content: '/////' }
-  &:after { content: attr(data-content) '/////' }
+  &:before {
+    content: '/////'
+  }
+
+  &:after {
+    content: attr(data-content) '/////'
+  }
 }
 
-table { width: 100%; }
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 5px;
+  border-right: 1px solid black;
+  border: solid 1px;
+}
 
-table, th, td {
-  border: thin solid black;
-  border-collapse: collapse;
+td,
+th {
+  border-right: 1px solid black;
+  text-align: center;
   padding: 0.4rem;
+}
+
+td {
+  border-right: 1px solid black;
+  border-top: 1px solid;
+  text-align: center;
+  padding: 0.4rem;
+}
+
+td:last-child,
+th:last-child {
+  border-right-color: transparent;
 }
 
 code {
@@ -72,19 +127,29 @@ code {
   background: black;
 }
 
+p code {
+  border-radius: 2px;
+  margin: 0px 1px 0px 1px;
+  padding: 0px 1px 0px 1px;
+}
+
 div.highlighter-rouge code {
   display: block;
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
+  border-radius: 5px;
 }
 
 blockquote {
   font-style: italic;
   border: thin solid black;
   padding: 1rem;
+  border-radius: 5px;
 
-  p { margin: 0; }
+  p {
+    margin: 0;
+  }
 }
 
 img {
